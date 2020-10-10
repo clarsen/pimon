@@ -4,7 +4,6 @@
 python3 -m venv .env
 . .env/bin/activate
 pip3 install vcgencmd influxdb
-sudo apt-get install entr
 ```
 
 # dev test
