@@ -33,3 +33,11 @@ docker run --name pimon \
   -e INFLUX_PASSWORD=<password-of-influx-user> \
   clarsen7/pimon
 ```
+
+# for Pis that don't support docker
+```
+sudo cp pimon.service /etc/systemd/system
+sudo systemctl enable pimon
+sudo systemctl start pimon
+sudo journalctl -u pimon
+```
