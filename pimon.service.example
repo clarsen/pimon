@@ -1,0 +1,20 @@
+[Unit]
+Description=Pi monitor
+After=network-online.target
+
+[Service]
+Type=simple
+User=pi
+Group=pi
+UMask=007
+Environment=INFLUX_HOST=<HOSTNAME of influxdb>
+Environment=INFLUX_USER=infra-rw
+Environment=INFLUX_DB=infra
+Environment=INFLUX_PASSWORD=<PASSWORD>
+Environment=HOST=<HOSTNAME of reporting host>
+ExecStart=/home/pi/src/pimon/pimon.sh
+Restart=on-failure
+TimeoutStopSec=300
+
+[Install]
+WantedBy=multi-user.target
