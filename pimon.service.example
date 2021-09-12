@@ -7,10 +7,10 @@ Type=simple
 User=pi
 Group=pi
 UMask=007
-Environment=INFLUX_HOST=<HOSTNAME of influxdb>
-Environment=INFLUX_USER=infra-rw
-Environment=INFLUX_DB=infra
-Environment=INFLUX_PASSWORD=<PASSWORD>
+Environment=INFLUXDB_URL=https://influxdbhost:8086
+Environment=INFLUXDB_TOKEN=<token with write access to bucket>
+Environment=INFLUXDB_ORG=<id of org>
+Environment=INFLUXDB_BUCKET=infra
 Environment=HOST=<HOSTNAME of reporting host>
 ExecStart=/home/pi/src/pimon/pimon.sh
 Restart=on-failure
